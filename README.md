@@ -13,3 +13,6 @@ A small, accessible, and responsive profile card built with HTML, CSS, and vanil
 ##  How to run locally
 1. Clone the repo:
    git clone https://github.com/monseeef/frontend-profile-card.git
+
+## You can see the Profile card here:
+https://profile-card-monsif.netlify.app/
