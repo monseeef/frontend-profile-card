@@ -1,10 +1,22 @@
+:root {
+  --primary-color: #bf092f;
+  --secondary-color: #16476a;
+  --text-color: #333;
+  --background-color: #f4f7f6;
+  --card-background: #ffffff;
+  --error-color: #d9534f;
+  --success-color: #5cb85c;
+  --border-radius: 8px;
+  --font-family: "Poppins", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
+/* body {
   font-family: "Poppins", sans-serif;
   background: #f5f6fa;
   color: #333;
@@ -12,29 +24,114 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+} */
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+header {
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem 5%;
+}
+nav {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+h2,
+h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/*  --Profile-card css */
 .profile-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background-color: var(--background-color);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
   overflow: hidden;
-  max-width: 600px;
-  width: 90%;
-  transition: transform 0.3s ease;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* max-width: 900px;
+  width: 90%; */
+  transition: transform 0.5s ease;
 }
 
 .profile-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+}
+
+.profile-content {
+  padding: 20px;
+}
+.profile-content h1 {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: none; /* Remove border from the main H1 */
+}
+.profile-content h3 {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  /* margin-top: 1rem; */
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 0.3rem;
 }
 
 .avatar-container {
   display: flex;
   justify-content: center;
   /* padding: 60px; */
-  background: #eef2f7;
+  overflow: hidden;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .avatar-container img {
@@ -43,9 +140,11 @@ body {
   /* border-radius: 50%; */
   object-fit: cover;
 }
-
-.profile-content {
-  padding: 20px;
+/* Time display */
+.user-time {
+  font-style: italic;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -58,24 +157,30 @@ p {
   line-height: 1.6;
 }
 
+/* Social Links */
+.social-nav {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
 .social-links {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 1.5rem;
   list-style: none;
-  margin-bottom: 20px;
+  padding: 0;
+  /* margin-top: 0.8rem; */
 }
 
-.social-links a {
-  text-decoration: none;
-  color: #0077ff;
-  font-weight: 500;
-  transition: color 0.3s;
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s;
 }
 
-.social-links a:hover,
-.social-links a:focus {
-  color: #0056b3;
-  outline: none;
+.social-links a:hover img {
+  transform: scale(1.1);
 }
 
 section {
@@ -90,7 +195,6 @@ section h3 {
 ul {
   list-style: disc inside;
 }
-
 @media (min-width: 700px) {
   .profile-card {
     flex-direction: row;
@@ -104,5 +208,133 @@ ul {
 
   .profile-content {
     flex: 1;
+  }
+}
+
+/* Contact Us */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* --- About Me Page Sections --- */
+main section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+}
+
+main ul {
+  padding-left: 1.5rem;
+}
+
+/* Validation Feedback */
+input.invalid,
+textarea.invalid {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  min-height: 1.2rem; /* Reserve space to prevent layout jump */
+}
+
+.success-message {
+  background-color: rgba(92, 184, 92, 0.1);
+  color: var(--success-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+button[type="submit"]:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+/* --- Footer --- */
+footer {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-color);
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* --- Accessibility (Keyboard Focus) --- */
+a:focus,
+button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* --- Responsiveness (Tablet/Mobile) --- */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  header {
+    padding: 1rem 1rem;
+  }
+
+  nav {
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
   }
 }

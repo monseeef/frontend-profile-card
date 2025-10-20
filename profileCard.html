@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Profile Card</title>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="profileCard.html" aria-current="page">Home</a>
+      <a href="aboutMe.html">About Me</a>
+      <a href="contactUs.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+
+    <article class="profile-card" data-testid="test-profile-card">
+
+      <figure class="avatar-container">
+        <img
+          src="https://images.unsplash.com/photo-1637858868799-7f26a0640eb6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880"
+          alt="User Avatar" data-testid="test-user-avatar" />
+      </figure>
+
+      <div class="profile-content">
+        <h1 data-testid="test-user-name">MONSIF EL OUARAT</h1>
+        <p data-testid="test-user-bio">
+          I'm a frontend developer passionate about clean UI and modern web
+          design.
+        </p>
+
+        <p class="user-time">
+          Current time:
+          <span data-testid="test-user-time">Loading...</span>
+        </p>
+
+        <nav class="social-nav">
+          <h3>Connect</h3>
+          <ul class="social-links" data-testid="test-user-social-media">
+            <li>
+              <a href="https://github.com/monseef" target="_blank" rel="noopener noreferrer"
+                data-testid="test-user-social-github">
+                <img src="./img/icons8-github-30.png" alt="Github">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/monsif-elouarat/" target="_blank" rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin">
+                <img src="./img/icons8-linkedin-30.png" alt="LinkedIn" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section data-testid="test-user-hobbies">
+          <h3>Hobbies</h3>
+          <ul>
+            <ul>
+              <li>Coding</li>
+              <li>Watching Anime</li>
+              <li>Playing Football</li>
+            </ul>
+          </ul>
+        </section>
+
+        <section data-testid="test-user-dislikes">
+          <h3>Dislikes</h3>
+          <ul>
+            <li>Spam messages</li>
+            <li>Cold weather</li>
+            <li>Negativity</li>
+          </ul>
+        </section>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Frontend Wizard MONSIF</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
