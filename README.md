@@ -1,18 +1,39 @@
+Frontend Wizards — Stage 1: Multi-Page Application
+A responsive, accessible, multi-page application built with HTML, CSS, and vanilla JavaScript. This project expands the initial Profile Card into a three-page site, focusing on form validation and cohesive design.
 
->>> Frontend Wizards — Stage 0 Profile Card
+✨ Features
+Three Cohesive Pages: Home (Profile Card), About Me, and Contact Us.
 
-A small, accessible, and responsive profile card built with HTML, CSS, and vanilla JavaScript.
+Semantic HTML: Proper use of main, section, article, and accessible elements throughout.
 
-##  Features
-- Semantic HTML structure
-- Responsive layout (mobile-first)
-- Live time in milliseconds
-- Accessible and keyboard-friendly
-- Hosted on Netlify
+Form Validation: Robust, vanilla JavaScript client-side validation for all fields on the Contact page.
 
-##  How to run locally
-1. Clone the repo:
-   git clone https://github.com/monseeef/frontend-profile-card.git
+Checks for required fields, valid email format, and a minimum 10-character message length.
 
-## You can see the Profile card here:
-https://profile-card-monsif.netlify.app/
+🚀 Accessibility:
+
+Full keyboard navigation.
+
+Correct label associations and aria-invalid handling for form errors.
+
+Responsive Design: Mobile-first approach ensures a great experience on all screen sizes.
+
+Modern Styling: Clean, minimalist design with a consistent color scheme.
+
+Live Time: Displays the current time in milliseconds on the Home page.
+
+🚀 How to Run Locally
+Clone the repository:
+
+Bash
+
+git clone https://github.com/monseeef/frontend-profile-card.git
+Navigate to the project directory:
+
+Bash
+
+cd frontend-profile-card
+Open the files: Simply open index.html in your web browser.
+
+🌐 Live Application
+https://monsif.netlify.app/ 
